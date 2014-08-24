@@ -12,7 +12,7 @@ for folder in glob.glob('.\\raw\\*'):
 	hitbox_file = open('..\\data\\' + move_name + '.json', 'w')
 
 	# {left_bound, bottom_bound, frame_data}
-	hitbox_file.write('animations.' + move_name + '=')
+	hitbox_file.write('sfb.animations.' + move_name + '=')
 
 	# set the number of frames in the animation based on the .txt filename
 	data = [0] * get_frame(glob.glob(folder + '\\*.txt')[0])
