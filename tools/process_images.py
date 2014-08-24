@@ -9,7 +9,7 @@ def get_frame(path):
 
 for folder in glob.glob('.\\raw\\*'):
 	move_name = folder.rpartition('\\')[2]
-	hitbox_file = open('.\\json\\' + move_name + '.json', 'w')
+	hitbox_file = open('..\\data\\' + move_name + '.json', 'w')
 
 	# {left_bound, bottom_bound, frame_data}
 	hitbox_file.write('animations.' + move_name + '=')

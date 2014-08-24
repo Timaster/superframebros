@@ -1,0 +1,22 @@
+/* reset */
+html, body, img, canvas {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+#stage {
+	position: absolute;
+	z-index: 0;
+}
+
+#character {
+	position: absolute;
+	z-index: 2;
+}
+
+#canvas {
+	position: absolute;
+	z-index: 1;
+}
