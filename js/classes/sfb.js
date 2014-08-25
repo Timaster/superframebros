@@ -3,11 +3,11 @@ function SuperFrameBros()
 	var t = this;
 
 	var character_images = {};
-	var character = 'fax';
+	var character = 'fox';
 	var character_position = [1477, 501];
 	var stage_images = {};
 	var stage = 'final_destination';
-	var draw_color = [255, 0, 0];
+	var draw_color = [0, 255, 0, 150];
 
 	t.animations = {};
 	var ctx;
@@ -44,9 +44,9 @@ function SuperFrameBros()
 		}
 	};
 
-	t.drawFrame = function(name, frame, draw)
+	t.drawFrame = function(name, frame, no_draw)
 	{
-		var animation = t.animations[name];
+		var animation = t.animations[character][name];
 		if (!animation[frame])
 			return;
 
@@ -68,20 +68,20 @@ function SuperFrameBros()
 					imgData.data[4*(i+j*1920)+0] = draw_color[0];
 					imgData.data[4*(i+j*1920)+1] = draw_color[1];
 					imgData.data[4*(i+j*1920)+2] = draw_color[2];
-					imgData.data[4*(i+j*1920)+3] = 150;
+					imgData.data[4*(i+j*1920)+3] = draw_color[3];
 				}
 			}
 		}
-		if (draw)
+		if (!no_draw)
 			t.draw();
 	};
 
 	t.drawAnimation = function(name)
 	{
-		var animation = t.animations[name];
+		var animation = t.animations[character][name];
 		for (var frame = 0; frame < animation.length; frame++)
 		{
-			t.drawFrame(name, frame, false);
+			t.drawFrame(name, frame, true);
 		}
 		t.draw();
 	};
