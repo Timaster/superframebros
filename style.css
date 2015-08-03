@@ -6,6 +6,11 @@ html, body, img, canvas {
 	vertical-align: baseline;
 }
 
+#canvas {
+	position: absolute;
+	z-index: 1;
+}
+
 #stage {
 	position: absolute;
 	z-index: 0;
@@ -16,7 +21,19 @@ html, body, img, canvas {
 	z-index: 2;
 }
 
-#canvas {
+#control_panel_container {
 	position: absolute;
-	z-index: 1;
+	right: 0;
+	color: #FFFFFF;
+	background-color: #3C4B78;
+	width: 480px;
+	height: 100%;
+}
+
+#control_panel {
+	margin: 40px;
+	font-family: Courier;
+	font-size: 2em;
+	font-weight: bold;
+	font-variant: small-caps;
 }
