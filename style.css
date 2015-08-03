@@ -31,9 +31,29 @@ html, body, img, canvas {
 }
 
 #control_panel {
+	font-size: 2em;
 	margin: 40px;
 	font-family: Courier;
-	font-size: 2em;
 	font-weight: bold;
 	font-variant: small-caps;
+}
+
+#apply_button {
+	color: #000000;
+	position: absolute;
+	bottom:40px;
+	width:80%;
+	font-family: Courier;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 1em;
+	background-color: #9CABD8;
+}
+
+.option_title {
+	font-size: 1.2em;
+}
+
+.option {
+	margin-bottom: 20px;
 }

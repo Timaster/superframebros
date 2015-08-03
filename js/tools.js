@@ -45,11 +45,26 @@ function loadMovelist()
 function processOption(name)
 {
 	var element = document.createElement('div');
+	element.setAttribute("class", "option");
 	document.getElementById('control_panel').appendChild(element);
-	element.id = "option_" + name;
+	settings[name].create(character, element);
+	settings[name].apply();
+}
 
-	settings[name].element = element;
-	settings[name].create(character);
+function applySettings()
+{
+	for (var i=0; i<optionsList.length; i++)
+		settings[optionsList[i]].apply();
+	clearData();
 
-	element.innerHTML = settings[name].text;
+	var anims = [];
+	for (var i=0; i<settings.movelist.value.length; i++)
+		if (settings.movelist.value[i].value === true)
+			anims.push(settings.movelist.value[i].name);
+
+	for (var i = 0; i < anims.length; i++)
+	{
+		drawAnimation(anims[i]);
+	}
+	draw();
 }

@@ -1,7 +1,9 @@
 settings.lookahead = {};
-settings.lookahead.value = 1000;
-settings.lookahead.text = 'frames to calculate'
-settings.lookahead.create = function(character)
+settings.lookahead.create = function(character, div)
 {
-
+	div.innerHTML = 'look ahead <input type="number" id="lookahead" value="60" step="1" min="1" max="600"></input> frames';
+};
+settings.lookahead.apply = function()
+{
+	settings.lookahead.value = document.getElementById('lookahead').value;
 };
